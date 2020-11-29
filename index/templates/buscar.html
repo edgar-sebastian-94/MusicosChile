@@ -1,0 +1,124 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div id="cajadatos"> <!--Caja para buscar usuarios por datos-->
+  <h1>Buscar por datos</h1>
+      <div class="row">
+          <div class="col-lg-4"  style="background-color:#3c9cdb">
+              <label for="opcion">Sexo</label>
+              <select id="opciones" name="opcion">
+              <option value="">- Selecciona una opción -</option>
+              <option value="1">Masculino</option>
+              <option value="2">Femenino</option>
+              </select>
+              <br>
+              <label for ="edad">Edad</label>
+              <input type="text" name "edad" id ="edad"placeholder="Ingresar edad">
+              <br>
+              <label for="opcion">Región</label>
+              <select id="opciones" name="opcion">
+              <option value="">- Selecciona una opción -</option>
+              <option value="1">I Región</option>
+              <option value="2">II Región</option>
+              <option value="3">III Región</option>
+              <option value="4">IV Región</option>
+              <option value="5">V Región</option>
+              <option value="6">VI Región</option>
+              <option value="7">VII Región</option>
+              <option value="8">VIII Región</option>
+              <option value="9">IX Región</option>
+              <option value="10">X Región</option>
+              <option value="11">XI Región</option>
+              <option value="12">XII Región</option>
+              <option value="13">Region Metropolitana</option>
+              <option value="14">XIV Región</option>
+              <option value="15">XV Región</option>
+              <option value="16">XVI Región</option>
+              </select>
+              <br>
+              <label for="opcion">Provincia</label>
+              <select id="opciones" name="opcion">
+              <option value="">- Selecciona una opción -</option>
+              <option value="1">Chacabuco</option>
+              <option value="2">Cordillera</option>
+              <option value="3">Maipo</option>
+              <option value="4">Melipilla</option>
+              <option value="5">Santiago</option>
+              <option value="6">Talagante</option>
+              </select>
+              <br>
+              <div class="form-group">
+                  <label class="control-label">Con Experiencia</label>
+                  <div class="form-check"><input class="form-check-input"  type="radio" name="copia" value="Si"  id="Si"  /> <label class="form-check-label" for="Si">Sí</label></div>
+                  <div class="form-check"><input class="form-check-input"  type="radio" name="copia" value="No"  id="No"  /> <label class="form-check-label" for="No">No</label></div>
+              </div>
+          </div>
+
+          <div class="col-lg-4"  style="background-color:#3c9cdb" >
+              <label for ="instrumentos">Instrumentos</label>
+              <input type="text" name "Instrumento" id ="instrumentos" placeholder="Ingresar instrumeto">
+              <br>
+              <label for ="estilos">Estilos</label>
+              <br>
+              <input type="text" name "Estilo" id ="estilos" placeholder="Ingresar Estilo">
+              <br>
+              <label for ="grupos">Grupos</label>
+              <br>
+              <input type="text" name "Grupo" id ="grupos" placeholder="Ingresar Grupo">
+              <br>
+              <label for ="uacceso">Último acceso</label>
+              <input type="text" name "Ultimoacceso" id ="uacceso"placeholder="Ingresar Úlltimo acceso">
+              <br>
+              <div class="form-group">
+                  <label class="control-label">Con estudios</label>
+                  <div class="form-check"><input class="form-check-input"  type="radio" name="copia" value="Si"  id="Si"  /> <label class="form-check-label" for="Si">Sí</label></div>
+                  <div class="form-check"><input class="form-check-input"  type="radio" name="copia" value="No"  id="No"  /> <label class="form-check-label" for="No">No</label></div>
+              </div>
+          </div>
+          <div class="col-lg-4"  style="background-color:#3c9cdb" ></div>
+      </div>
+      <br>
+      <button type="submit">Lista de Datos</button>
+      <button type="submit">Lista de Imagenes</button>
+      <div id="cajadatos4">
+         
+      </div> 
+</div>
+<br>
+
+<div id="cajadatos"> <!--Caja con mapa dentro para buscar usuarios dentro del-->
+  <h1>Buscar por lugar</h1>
+  
+<div id="cajamapa">
+
+{% load static %}
+<img src="{% static 'images/Mapa Santiago.jpg' %}" width="100%">
+
+</div>
+
+</div>   
+<br>
+
+<div id="cajadatos"> <!--Caja de buscar por anuncios de usuarios o bandas-->
+<h1>Buscar por anuncios</h1>
+<div id="cajadatos4">
+  Anuncio 1
+</div> 
+<div id="cajadatos4">
+  Anuncio 2
+</div> 
+<div id="cajadatos4">
+  Anuncio 3
+</div> 
+
+<button>Contactar</button>
+<br>
+<br>
+<div id="cajadatos4">
+  Escribir anuncio
+</div> 
+<button>Publicar</button>
+</div> 
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>mensaje List</h1>
+
+    {% if mensaje_list %}
+    <ul>
+
+      {% for mensaje in mensaje_list %}
+      <li>
+        <a href="{{ mensaje.get_absolute_url }}">{{ mensaje.id }}</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+
+    {% else %}
+      <p>There are no books in the library.</p>
+    {% endif %}       
+{% endblock %}

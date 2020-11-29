@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div id="cajadatos">
+<h1>Registro</h1>
+
+  
+  <div style="background-color:#3c9cdb">
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Registrarse</button>
+  </form>
+  <br>
+</div> 
+  
+
+
+</div>
+{% endblock %}

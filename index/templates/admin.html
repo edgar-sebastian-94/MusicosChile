@@ -1,0 +1,240 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<div id="cajadatos"> <!--Caja para registrarse como usuario-->
+    <!--
+    <div class="row">
+        <div class="col-lg-4"  style="background-color:#3c9cdb">
+          <h1>CRUD Músicos</h1>
+          <br>
+          <input type="text" name "nombres" id ="nombres" placeholder="Ingresar usuario">
+          <br>
+          <br>
+          <button>Crear músico</button>
+          <br>
+          <button>Actualizar músico</button>
+          <br>
+          <button>Consultar músico</button>
+          <br>
+          <button>Eliminar músico</button>
+          <br>
+        
+        </div>
+            
+        <div class="col-lg-4"  style="background-color:#3c9cdb">
+          <h1>CRUD Mensajes</h1>
+          <br>
+          <input type="text" name "nombres" id ="nombres" placeholder="Ingresar mensaje">
+          <br>
+          <br>
+          <button>Crear mensaje</button>
+          <br>
+          <button>Actualizar mensaje</button>
+          <br>
+          <button>Consultar mensaje</button>
+          <br>
+          <button>Eliminar mensaje</button>
+          <br>
+        
+        </div>
+       
+
+        <div class="col-lg-4"  style="background-color:#3c9cdb">
+          <h1>Cantidad de registros</h1>
+          <br>
+          <div id="cajadatos4" style="height: 400px;">
+            
+          <li><strong>Musicos:</strong> {{ num_musicos }}</li>
+          <li><strong>Mensajes:</strong> {{ num_mensajes }}</li>
+          
+          </ul>
+  
+          </div>
+          <br> 
+        </div>
+
+      
+    </div>
+    <br>
+    -->
+    <h1>Cantidad de registros</h1>
+          <br>
+          <div id="cajadatos4" style="height: 400px;">
+            
+          <li><strong>Musicos:</strong> {{ num_musicos }}</li>
+          <li><strong>Mensajes:</strong> {{ num_mensajes }}</li>
+          
+          </ul>
+  
+          </div>
+          <br> 
+    
+    <button>Salir</button>
+  
+</div>
+<br>
+<div id="cajadatos"> <!--Caja para registrarse como usuario-->
+  <h1>CRUD músicos</h1>
+  
+    <div class="row">
+        <div class="col-lg-4"  style="background-color:#3c9cdb">
+          
+          <label for ="nombre de usuario">Nombre de usuario</label>
+          <br>
+          <input type="text" name "usuario" id="usuario" placeholder="Ingresar usuario">
+          <br>
+          <br>
+          <label for ="nombres">Nombres</label>
+          <input type="text" name "nombres" id ="nombres" placeholder="Ingresar nombres">
+          <br>
+          <br>
+          <label for ="apellidos">Apellidos</label>
+          <br>
+          <input type="text" name "apellidos" id ="apellidos" placeholder="Ingresar apellidos">
+          <br>
+          <br>
+          <label for ="edad">Edad</label>
+          <br>
+          <input type="text" name "edad" id ="edad"placeholder="Ingresar edad">
+          <br>
+          <br>
+          
+          
+        
+        </div>
+            
+        <div class="col-lg-4"  style="background-color:#3c9cdb">
+          
+          <label for ="contraseña">Contraseña</label>
+          <br>
+          <input type="password" name "contraseña" id="contraseña" placeholder="Ingresar contraseña">
+          <br>
+          <br>
+          <label for ="Telefono celular">Teléfono celular</label>
+          <br>
+          <input type="text" name "celular" id="celular" placeholder="Ingresar celular">
+          <br>
+          <br>
+          <label for ="Correo">Correo electrónico</label>
+          <br>
+          <input type="email" name "correo" id="correo" placeholder="Ingresar correo">
+          <br>
+          <br>
+          <label for="opcion">Region</label>
+          <select id="opciones" name="opcion">
+            <option value="">- Selecciona una opción -</option>
+            <option value="1">I Región</option>
+            <option value="2">II Región</option>
+            <option value="3">III Región</option>
+            <option value="4">IV Región</option>
+            <option value="5">V Región</option>
+            <option value="6">VI Región</option>
+            <option value="7">VII Región</option>
+            <option value="8">VIII Región</option>
+            <option value="9">IX Región</option>
+            <option value="10">X Región</option>
+            <option value="11">XI Región</option>
+            <option value="12">XII Región</option>
+            <option value="13">Region Metropolitana</option>
+            <option value="14">XIV Región</option>
+            <option value="15">XV Región</option>
+            <option value="16">XVI Región</option>
+          </select>
+          <br> 
+          <br>
+        
+        
+        </div>
+       
+
+        <div class="col-lg-4"  style="background-color:#3c9cdb">
+          <br>
+          
+          <div id="cajadatos4" style="height: 300px;">
+            
+          <li><strong>Musicos:</strong> {{ num_musicos }}</li>
+          <li><strong>Mensajes:</strong> {{ num_mensajes }}</li>
+          
+          </ul>
+  
+          </div>
+          
+          <button>Crear</button>
+          <button>Actualizar</button>
+          <button>Consultar</button>
+          <button>Eliminar</button>
+          <br>
+          <br>
+        </div>
+        
+    </div>
+    <br>
+    
+    <button>Salir</button>
+  
+</div>
+<br>
+<div id="cajadatos"> <!--Caja para registrarse como usuario-->
+  <h1>CRUD mensajes</h1>
+  
+    <div class="row">
+        <div class="col-lg-4"  style="background-color:#3c9cdb">
+          
+          <label for ="nombre de usuario">Numero de mensaje</label>
+          <br>
+          <input type="text" name "usuario" id="usuario" placeholder="Ingresar numero de mensaje">
+          <br>
+          <br>
+          <label for ="nombres">Usuario</label>
+          <input type="text" name "nombres" id ="nombres" placeholder="Ingresar usuario">
+          <br>
+          <br>
+          
+        </div>
+            
+        <div class="col-lg-4"  style="background-color:#3c9cdb">
+          <label for ="apellidos">Texto</label>
+          <br>
+          <input type="text" name "apellidos" id ="apellidos" placeholder="Ingresar texto">
+          <br>
+          <br>
+          <label for ="edad">Fecha</label>
+          <br>
+          <input type="text" name "edad" id ="edad"placeholder="Ingresar fecha">
+          <br>
+          <br> 
+          
+        
+        </div>
+       
+
+        <div class="col-lg-4"  style="background-color:#3c9cdb">
+          <br>
+          
+          <div id="cajadatos4" style="height: 200px;">
+            
+          <li><strong>Musicos:</strong> {{ num_musicos }}</li>
+          <li><strong>Mensajes:</strong> {{ num_mensajes }}</li>
+          
+          </ul>
+  
+          </div>
+          
+          <button>Crear</button>
+          <button>Actualizar</button>
+          <button>Consultar</button>
+          <button>Eliminar</button>
+          <br>
+          <br>
+        </div>
+        
+    </div>
+    <br>
+    
+    <button>Salir</button>
+  
+</div>
+
+
+{% endblock %}

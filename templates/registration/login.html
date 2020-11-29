@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="cajadatos">
+<h1>Inicio de sesion</h1>
+<div class="row">
+  <div class="col-lg-4"  style="background-color:rgb(0, 48, 136);"></div>
+<div class="col-lg-4"  style="background-color:#3c9cdb">
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Ingresar</button>
+</form>
+<br>
+</div>  
+<div class="col-lg-4"  style="background-color:rgb(0, 48, 136);"></div>
+
+</div>
+</div>
+
+{% endblock %}

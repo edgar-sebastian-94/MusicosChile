@@ -1,0 +1,205 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<div id="cajadatos">  <!--Caja de datos de usuario en el perfil-->
+  <h1>Datos de usuario </h1> 
+
+  <div class="row">
+    <div class="col-lg-4"  style="background-color:#3c9cdb">
+      <br>
+      <br>
+      <div id="cajaimagen">
+        {% load static %}
+        <img src="{% static 'images//Perfil2.jpg' %}" width="100%">
+        
+      </div>
+      
+      <button>Cambiar imagen </button> 
+    </div>
+    <div class="col-lg-4"  style="background-color:#3c9cdb">
+      <br>
+      <label>Nombre</label>
+      <div id="cajadatos2">
+        Felipe_123 
+      </div>
+
+      <label>Sexo</label>
+      <div id="cajadatos2">
+        Hombre 
+      </div>
+
+      <label>Edad</label>
+      <div id="cajadatos2">
+        24 
+      </div>
+
+      <label>Región</label>
+      <div id="cajadatos2">
+        Metropolitana 
+      </div>
+
+      <label>Provincia</label>
+      <div id="cajadatos2">
+        Maipú 
+      </div> 
+      <br>
+    </div>
+
+    <div class="col-lg-4"  style="background-color:#3c9cdb">
+      <br>
+      <label>Estudios</label>
+      <div id="cajadatos3">
+        -Teoría musical en Universidad de Chile 
+        <br>
+        -Curso de guitarra en Academia de música y arte
+      </div>
+      <label>Experiencia</label>
+      <div id="cajadatos3">
+        -3 años tocando en banda de rock
+        <br>
+        -1 años tocando en el metro de Santiago
+      </div>
+      <br>
+    </div>
+  </div>
+</div>  
+<br>
+
+<div id="cajadatos"> <!--Caja de instrumentos-->
+  <h1>Instrumentos</h1>
+
+  <div class="row">
+    <div class="col-lg-4"  style="background-color:#3c9cdb">
+      <br>
+      <label>Instrumento 1</label>
+      <div id="cajadatos2">
+        Guitarra 
+      </div>
+      <label>Nivel</label>
+      <div id="cajadatos2">
+        Alto 
+      </div>
+      <br>
+    </div>
+
+    <div class="col-lg-4"  style="background-color:#3c9cdb">
+      <br>
+      <label>Instrumento 2</label>
+      <div id="cajadatos2">
+        Piano 
+      </div>
+      <label>Nivel</label>
+      <div id="cajadatos2">
+        Medio 
+      </div>
+      <br>
+    </div>
+
+    <div class="col-lg-4"  style="background-color:#3c9cdb">
+      <br>
+      <label>Instrumento 3</label>
+      <div id="cajadatos2">
+        Voz
+      </div>
+      <label>Nivel</label>
+      <div id="cajadatos2">
+        Básico 
+      </div>
+      <br>
+    </div>
+  </div>
+</div> 
+<br>
+
+<div id="cajadatos"> <!--Caja de estilos-->
+  <h1>Estilo</h1>
+
+  <div class="row">
+    <div class="col-lg-4"  style="background-color:#3c9cdb">
+      <br>
+      <label>Estilos favoritos</label>
+      <div id="cajadatos2">
+        Rock y Pop  
+      </div>
+      <br>
+      
+    </div>
+    <div class="col-lg-4"  style="background-color:#3c9cdb">
+      <br>
+      <label>Grupos favoritos</label>
+      <div id="cajadatos2">
+        Los bunkers 
+      </div>
+      <br>
+  
+    </div>
+    <div class="col-lg-4"  style="background-color:#3c9cdb">
+      <br>
+      <label>Marcas favoritas</label>
+      <div id="cajadatos2">
+        Fender, Gibson, Ibanez 
+      </div>
+      <br>
+    </div>
+  </div>
+</div> 
+<br>
+
+<div id="cajadatos"> <!--Caja de galeria multimedia-->
+  <h1>Galería multimedia</h1>
+
+  <div class="row">
+    <div class="col-lg-4"  style="background-color:#3c9cdb">
+            <br>
+            <button>Imagenes subidas</button>
+            <button>Subir imagenes</button>
+
+            <div id="cajadatos3">
+                Imagenes
+            </div>
+            <br>
+      
+    </div>
+    <div class="col-lg-4"  style="background-color:#3c9cdb">
+            <br>
+            <button>Videos subidos</button>
+            <button>Subir videos</button>
+
+            <div id="cajadatos3">
+                Videos
+            </div>
+            <br>
+  
+    </div>
+    <div class="col-lg-4"  style="background-color:#3c9cdb">
+            <br>
+            <button>Audios subidos</button>
+            <button>Subir Audios</button>
+
+            <div id="cajadatos3">
+                Audios
+            </div>
+            <br>
+    
+    </div>
+  </div>
+
+</div> 
+<br>
+
+<div id="cajadatos"> <!--Caja de otros datos para poner una descripción-->
+  <h1>Otros datos</h1>
+      <div id="cajadatos4">
+        Texto de descripción
+      </div> 
+</div> 
+<br>
+
+<div id="cajadatos">
+    <button>Guardar cambios</button>
+    <button>Salir</button>
+</div>
+
+
+{% endblock %}

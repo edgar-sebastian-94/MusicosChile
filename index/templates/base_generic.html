@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  {% block title %}<title>MúsicosChile</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+  <link rel="stylesheet" href="{% static 'css/carousel.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+
+  <style>
+    body
+  {
+       background-color: #111111;
+       padding: 30px;
+  }
+
+  </style>
+  
+</head>
+
+<body>
+
+  <div id="cajadatos"> <!--Portada y logo de la pagina-->
+    {% load static %}
+    <img src="{% static 'images/Logo4.jpg' %}" alt="My image" style="width:100%;"/>
+  </div> 
+    <br>
+
+    <nav> <!--Menu de las opciones inicio, perfil, buscar, y registro-->
+    <div id="cajadatos">
+      <div class="row">
+         <div class="col-lg-2">
+          <a href="{% url 'index' %}">{% load static %}
+            <img src="{% static 'images/Boton inicio 2.png' %}" width="100%" height="60px">
+          </a>
+
+         </div>
+         <div class="col-lg-2">
+          <a href="{% url 'perfil' %}">{% load static %}
+            <img src="{% static 'images/Boton perfil 2.png' %}" width="100%" height="60px">
+          </a>
+
+         </div>
+         <div class="col-lg-2">
+          <a href="{% url 'buscar' %}">{% load static %}
+            <img src="{% static 'images/Boton buscar 2.png' %}" width="100%" height="60px">
+          </a>
+          
+         </div>
+         <div class="col-lg-2">
+          <a href="{% url 'registro' %}">{% load static %}
+            <img src="{% static 'images/Boton registro 2.png' %}" width="100%" height="60px">
+          </a>
+
+         </div>
+         {% if user.is_authenticated  %}
+         <div class="col-lg-4">
+          <a href="{% url 'logout' %}">{% load static %}
+            <button style="height: 60px; background-color: rgb(255, 255, 255); font-size: 30px;">Cerrar sesion</button>
+          </a>
+         </div>
+         {% else %}
+         <div class="col-lg-4">
+          <a href="{% url 'login' %}">{% load static %}
+            <button style="height: 60px; background-color: rgb(255, 255, 255); font-size: 30px;">Iniciar sesion</button>
+          </a>
+         </div>
+         {% endif %}
+      </div>
+    </div> 
+    </nav>
+    <br>
+    
+      {% block content %}{% endblock %}
+      
+    <br>  
+      <footer> <!--Footer con las opciones contactanos, redes sociales, manual, y acerca de nosotros-->
+        <div id="cajadatos">
+          <div class="row">
+             <div class="col-lg-3">
+              <button onclick="">Contactanos</button>
+             </div>
+             <div class="col-lg-3">
+              <button>Redes sociales</button>
+             </div>
+             <div class="col-lg-3">
+              <button>Manual</button>
+             </div>
+             <div class="col-lg-3">
+              <button>Acerca de nosotros</button>
+             </div>
+          </div>
+        </div> 
+      </footer>
+</body>
+</html>

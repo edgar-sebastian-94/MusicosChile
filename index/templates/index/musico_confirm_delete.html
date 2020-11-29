@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{%block content%}
+<Div id="cajadatos">
+<h1> Eliminar músico </h1>
+<p style="color: rgb(255, 255, 255);">¿Estas seguro de que quieres eliminar al usuario: {{musico}} ?</p>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="submit" action="" value="Eliminar">
+</form>
+</Div>
+{%endblock%}

@@ -1,0 +1,324 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<div id="cajadatos" width="60%">  <!--Caja de inicio de sesión y mensajes-->
+      <h1>Bienvenido {{ user.get_username }}</h1> 
+    
+      <div class="row">
+          <div class="col-lg-4"  style="background-color:#3c9cdb">
+              <br>
+              <div id="cajaimagen">
+                {% load static %}
+                <img src="{% static 'images/Perfil2.jpg' %}" width="100%">
+                
+              </div>
+              <br>
+
+              <a href="mensaje/create/">
+                <button>Enviar mensaje</button>
+              </a>
+          </div>
+
+          <div class="col-lg-4"  style="background-color:#3c9cdb">
+            
+            <h1>Mensajes</h1>
+            <br>
+            <div id="cajadatos4" style="height: 300px;">
+              <li><strong>Mensajes enviados:</strong> <br> {{ men_enviados }}</li>
+              
+            </div> 
+            <br>
+          </div>
+         
+
+  
+          <div class="col-lg-4"  style="background-color:#3c9cdb">
+            <h1>Cantidad de registros</h1>
+            <br>
+            <div id="cajadatos4" style="height: 300px;">
+              
+            <li><strong>Musicos:</strong> {{ num_musicos }}</li>
+            <li><strong>Mensajes:</strong> {{ num_mensajes }}</li>
+            
+            </ul>
+    
+            </div>
+            <br> 
+          </div>
+        <!--
+        <div class="col-lg-4"  style="background-color:#3c9cdb">
+          <label>Nombre de usuario</label>
+          <input type="text" name "usuario" id="usuario" placeholder="Ingresar usuario">
+          <label>Contraseña</label>
+          <input type="password" name "contraseña" id="contraseña" placeholder="Ingresar contraseña">
+          <br><br>
+          <a href="{% url 'mensajes' %}">{% load static %}
+            <button onclick="Ingresar()">Mensajes</button>
+          </a>
+          {% if user.is_authenticated  %}
+          <a href="{% url 'admin' %}">{% load static %}
+            <button onclick="Ingresar()">Administración</button>
+          </a>
+          {% else %}
+          {% endif %}
+          <a href="musico/create/">
+            <button onclick="Ingresar()">Administrac</button>
+          </a>
+          
+        </div>
+        
+        <div class="col-lg-4"  style="background-color:#3c9cdb"></div>
+        <br>
+      -->
+        
+      </div>
+    </div> 
+    <br>
+    {% if user.is_superuser %}
+    <div id="cajadatos" width="60%">
+      <h1>Administración de base de datos</h1> 
+    
+    <div class="row">
+        <div class="col-lg-4"  style="background-color:#3c9cdb">
+          <h1>CRUD Músicos</h1>
+          <br>
+        
+          <script>
+            function actualizar_musico()
+            {
+              nom= document.getElementById('nombre_usuario').value;
+              dir = "musico/"+nom+"/update/";
+              /*alert(dir);*/
+              var str = "ir a la pagina";
+              var result = str.link(dir);
+              document.getElementById("demo").innerHTML = result;
+              
+            }
+            function consultar_musico()
+            {
+              nom= document.getElementById('nombre_usuario').value;
+              dir = "musico/"+nom+"";
+              /*alert(dir);*/
+              var str = "ir a la pagina";
+              var result = str.link(dir);
+              document.getElementById("demo").innerHTML = result;
+              
+            }
+            function eliminar_musico()
+            {
+              nom= document.getElementById('nombre_usuario').value;
+              dir = "musico/"+nom+"/delete/";
+              /*alert(dir);*/
+              var str = "ir a la pagina";
+              var result = str.link(dir);
+              document.getElementById("demo").innerHTML = result;
+              
+            }
+          </script>
+
+          <input type="text" name "nombre_usuario" id ="nombre_usuario" placeholder="Ingresar usuario">
+          <br><br>
+        
+          <a href="musico/create/">
+            <button>Crear músico</button>
+          </a>
+          <button onclick="actualizar_musico()">Actualizar músico</button>
+          <button onclick="consultar_musico()">Consultar músico</button>
+          <button onclick="eliminar_musico()">Eliminar músico</button>
+          <br><br>
+          <p id="demo" style="background-color: rgb(255, 255, 255);"></p>
+
+        </div>
+            
+        <div class="col-lg-4"  style="background-color:#3c9cdb">
+          <h1>CRUD Mensajes</h1>
+          <br>
+          <script>
+            function actualizar_mensaje()
+            {
+              nom= document.getElementById('numero_mensaje').value;
+              dir = "mensaje/"+nom+"/update/";
+              /*alert(dir);*/
+              var str = "ir a la pagina";
+              var result = str.link(dir);
+              document.getElementById("demo").innerHTML = result;
+              
+            }
+            function consultar_mensaje()
+            {
+              nom= document.getElementById('numero_mensaje').value;
+              dir = "mensaje/"+nom+"";
+              /*alert(dir);*/
+              var str = "ir a la pagina";
+              var result = str.link(dir);
+              document.getElementById("demo").innerHTML = result;
+              
+            }
+            function eliminar_mensaje()
+            {
+              nom= document.getElementById('numero_mensaje').value;
+              dir = "mensaje/"+nom+"/delete/";
+              /*alert(dir);*/
+              var str = "ir a la pagina";
+              var result = str.link(dir);
+              document.getElementById("demo").innerHTML = result;
+              
+            }
+          </script>
+
+          <input type="text" name "numero_mensaje" id ="numero_mensaje" placeholder="Ingresar numero de mensaje">
+          <br><br>
+          
+          <a href="mensaje/create/">
+            <button>Crear mensaje</button>
+          </a>
+          <button onclick="actualizar_mensaje()">Actualizar mensaje</button>
+          <button onclick="consultar_mensaje()">Consultar mensaje</button>
+          <button onclick="eliminar_mensaje()">Eliminar mensaje</button>
+          <br><br>
+          <p id="demo" style="background-color: rgb(255, 255, 255);"></p>
+        
+        </div>
+       
+
+        <div class="col-lg-4"  style="background-color:#3c9cdb">
+          <h1>Cantidad de registros</h1>
+          <br>
+          <div id="cajadatos4" style="height: 300px;">
+            
+          <li><strong>Musicos:</strong> {{ num_musicos }}</li>
+          <li><strong>Mensajes:</strong> {{ num_mensajes }}</li>
+          
+          </ul>
+  
+          </div>
+          <br> 
+        </div>
+
+      
+    </div>
+  </div>
+    <br>
+    {% else %}
+{% endif %}
+<div id="cajadatos">  <!--Carrusel con fotos e info de los usuarios favoritos-->
+  <h1>Usuarios Favoritos</h1>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+      <div class="container">
+        <div class="carousel-caption text-left">
+            {% load static %}
+            <img src="{% static 'images/musico2.jpg' %}" width="42%">
+            
+            <h2>Cristobal 23 Años</h2>
+            <p>Cristobal esta encaminado para los grandes eventos, junto a su amada guitarra.</p>
+            <p><a class="btn btn-lg btn-primary" href="#" role="button">contactar</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+      <div class="container">
+        <div class="carousel-caption">
+            {% load static %}
+            <img src="{% static 'images/musico1.jpg' %}" width="50%">
+            
+            <h2>Juan 26 Años</h2>
+            <p>Juan es un buen guitarrista, toca para la banda creada por sus amigos.</p>
+            <p><a class="btn btn-lg btn-primary" href="#" role="button">contactar</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+      <div class="container">
+        <div class="carousel-caption text-right">
+            {% load static %}
+            <img src="{% static 'images/musico3.jpg' %}" width="45%">
+            
+            <h2>Emilio 37 Años</h2>
+            <p>Emilio es un artista del violonchelo, hace clases particulares de este instrumento.  </p>
+            <p><a class="btn btn-lg btn-primary" href="#" role="button">Contactar</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+{% else %}
+{% endif %}
+</div>
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+      
+      <br>
+      
+      <div id="cajadatos"> <!--Caja de novedades como videos nuevos-->
+        <h1>Novedades</h1>
+  
+        <div class="row">
+          <div class="col-lg-4"  style="background-color:#3c9cdb">
+                  <br>
+                  <label>Usuarios nuevos</label>
+                  <div id="cajaimagen">
+                    {% load static %}
+                    <img src="{% static 'images/Usuarios nuevos.jpg' %}" width="100%">
+                    
+                  </div>
+                  <br>
+          </div>
+          <div class="col-lg-4"  style="background-color:#3c9cdb">
+                  <br>
+                  <label>Videos nuevos</label>
+                  <div id="cajaimagen"> 
+                    {% load static %}
+                    <img src="{% static 'images/videos nuevos 2.jpg' %}" width="80%">
+                    
+                  </div>
+                  <br>
+          </div>
+          <div class="col-lg-4"  style="background-color:#3c9cdb">
+                  <br>
+                  <label>Temas nuevos</label>
+                  <div id="cajaimagen">
+                    {% load static %}
+                    <img src="{% static 'images/Temas nuevos.jpg' %}" width="100%">
+                    
+                  </div>
+                  <br>
+          </div>
+        </div>
+      </div> 
+
+<!--
+<h2>Dynamic content</h2>
+
+  <p>The library has the following record counts:</p>
+  <ul>
+    <li><strong>Musicos:</strong> {{ num_musicos }}</li>
+    <li><strong>Mensajes:</strong> {{ num_mensajes }}</li>
+    <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
+    <li><strong>Authors:</strong> {{ num_authors }}</li>
+  </ul>
+ --> 
+
+{% endblock %}
