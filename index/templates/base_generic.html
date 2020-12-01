@@ -40,30 +40,31 @@
     <nav> <!--Menu de las opciones inicio, perfil, buscar, y registro-->
     <div id="cajadatos">
       <div class="row">
-         <div class="col-lg-2">
+        <div class="col-lg-2">
           <a href="{% url 'index' %}">{% load static %}
-            <img src="{% static 'images/Boton inicio 2.png' %}" width="100%" height="60px">
+            <button style="height: 60px; background-color: rgb(255, 255, 255); font-size: 30px;">Inicio</button>
           </a>
+         </div>
 
-         </div>
-         <div class="col-lg-2">
-          <a href="{% url 'perfil' %}">{% load static %}
-            <img src="{% static 'images/Boton perfil 2.png' %}" width="100%" height="60px">
-          </a>
+          <div class="col-lg-2">
+            <a href="{% url 'perfil' %}">{% load static %}
+              <button style="height: 60px; background-color: rgb(255, 255, 255); font-size: 30px;">Perfil</button>
+            </a>
+           </div>
 
-         </div>
-         <div class="col-lg-2">
-          <a href="{% url 'buscar' %}">{% load static %}
-            <img src="{% static 'images/Boton buscar 2.png' %}" width="100%" height="60px">
-          </a>
-          
-         </div>
-         <div class="col-lg-2">
-          <a href="{% url 'registro' %}">{% load static %}
-            <img src="{% static 'images/Boton registro 2.png' %}" width="100%" height="60px">
-          </a>
+          <div class="col-lg-2">
+            <a href="{% url 'buscar' %}">{% load static %}
+              <button style="height: 60px; background-color: rgb(255, 255, 255); font-size: 30px;">Buscar</button>
+            </a>
+           </div>
+        
+          <div class="col-lg-2">
+            <a href="{% url 'signup' %}">{% load static %}
+              <button style="height: 60px; background-color: rgb(255, 255, 255); font-size: 30px;">Registro</button>
+            </a>
+           </div>
 
-         </div>
+         
          {% if user.is_authenticated  %}
          <div class="col-lg-4">
           <a href="{% url 'logout' %}">{% load static %}
